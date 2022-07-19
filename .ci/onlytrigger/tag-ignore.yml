@@ -1,7 +1,7 @@
 version: v2.0
 
 on:
-  mr:
+  tag:
     tags-ignore:
       - tag_*
     users-ignore:
