@@ -1,6 +1,5 @@
 version: v2.0
- 
-name: 全部语法测试-MR(无模板)
+
 
 on:
   mr:

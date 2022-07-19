@@ -1,6 +1,4 @@
 version: v2.0
- 
-name: 自动触发文件-特殊测试   
 
 steps:
 - checkout: self

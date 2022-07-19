@@ -1,6 +1,5 @@
 version: v2.0
  
-name: 全部语法测试(模板)-远程模板
 
 on:
   mr:

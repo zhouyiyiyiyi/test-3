@@ -1,7 +1,6 @@
 # ci/build.yml
 
 version: v2.0
-name: 矩阵测试
 stages:
 - name: 动态矩阵
   jobs:

@@ -1,6 +1,5 @@
 version: v2.0
- 
-name: 查看报告测试
+
 
 
 stages:

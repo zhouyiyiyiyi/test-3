@@ -1,6 +1,5 @@
 version: v2.0
- 
-name: 跨项目引用构建机测试
+
 
 
 jobs:

@@ -1,7 +1,4 @@
 version: v2.0
- 
-name: 自动触发文件
-   
 
 steps:
 - checkout: self

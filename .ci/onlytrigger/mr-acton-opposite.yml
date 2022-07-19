@@ -1,6 +1,4 @@
 version: v2.0
- 
-name: merge action 相反 测试
 
 on:
   mr:
