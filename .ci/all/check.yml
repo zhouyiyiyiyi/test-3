@@ -2,23 +2,6 @@ version: v2.0
  
 name: Stage-Check 功能综合测试
 
-on:
-  push:
-    branches:
-      - trigger-check
-    paths:
-      - triggers/trigger-check.txt
-  tag:
-    tags:
-      - tag-check-*
-    from-branches:
-      - trigger-check
-  mr:
-    target-branches:
-      - master
-    paths:
-      - triggers/trigger-check.txt
-
 variables:
   reviewer: ${{ ci.actor }}
   # reviewers: ruotiantang

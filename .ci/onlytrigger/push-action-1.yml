@@ -1,0 +1,13 @@
+version: v2.0
+
+on:
+  push:
+    action:
+      - new-branch
+ 
+stages:
+- jobs:
+    all-job-0:
+      steps:
+      - run: |
+          echo "::set-variable name=EVENT::${{ci.event}}"

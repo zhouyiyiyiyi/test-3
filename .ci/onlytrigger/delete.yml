@@ -1,0 +1,14 @@
+version: v2.0
+
+on:
+  delete:
+    types:
+      - branch
+      - tag
+ 
+stages:
+- jobs:
+    all-job-0:
+      steps:
+      - run: |
+          echo "::set-variable name=EVENT::${{ci.event}}"

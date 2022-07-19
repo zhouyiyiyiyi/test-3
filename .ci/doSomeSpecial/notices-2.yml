@@ -1,12 +1,6 @@
 version: v2.0
 name: 通知和变量二次替换
 
-on:
-  push:
-    branches:
-      - trigger-all
-    paths:
-      - triggers/trigger-all.txt
 
 variables:
   build_num: ${{ ci.build_num }}

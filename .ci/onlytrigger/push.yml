@@ -1,0 +1,17 @@
+version: v2.0
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - README.md
+    users:
+      - yongyiduan
+ 
+stages:
+- jobs:
+    all-job-0:
+      steps:
+      - run: |
+          echo "::set-variable name=EVENT::${{ci.event}}"

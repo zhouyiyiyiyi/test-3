@@ -2,9 +2,6 @@ version: v2.0
  
 name: 跨项目引用构建机测试
 
-on:
-  push:
-  - trigger
 
 jobs:
   job_id_1:

@@ -1,0 +1,14 @@
+version: v2.0
+
+on:
+  mr:
+    action:
+      - merge
+      - close
+ 
+stages:
+- jobs:
+    all-job-0:
+      steps:
+      - run: |
+          echo "::set-variable name=EVENT::${{ci.event}}"

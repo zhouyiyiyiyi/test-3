@@ -1,10 +1,5 @@
 version: v2.0
 
-on:
-  push:
-  - master
-  - trigger
-
 steps:
   - name: 输出上下文
     run: |

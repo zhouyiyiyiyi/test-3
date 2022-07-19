@@ -2,12 +2,6 @@ version: v2.0
  
 name: 查看报告测试
 
-on:
-  push:
-    branches:
-      - trigger-all
-    paths:
-      - triggers/trigger-all.txt
 
 stages:
 - name: 预设替换变量

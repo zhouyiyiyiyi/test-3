@@ -1,18 +1,6 @@
 version: v2.0
  
-name: 自动触发文件-特殊测试
-
-on:
-  push:
-    branches:
-      - trigger
-    paths:
-      - trigger.txt 
-  mr:
-    target-branches:
-      - trigger
-    paths:
-      - trigger.txt      
+name: 自动触发文件-特殊测试   
 
 steps:
 - checkout: self
