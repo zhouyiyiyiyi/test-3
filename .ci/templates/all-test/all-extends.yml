@@ -112,10 +112,6 @@ stages:
           echo " all-job-2 [continue-on-error, dependon] 执行完成"
           exit 1
       continue-on-error: true
-- template: all-test/all-stage-1.yml@all-template
-- template: all-test/all-stage-2.yml@all-template
-  parameters:
-    content: ${{ parameters.content }}
 
 
 finally:
@@ -161,12 +157,3 @@ notices:
     # - ww230072302
   content: ${{ variables.EVENT }}触发 STREAM-PROD环境-全部语法测试(模板) 测试失败
   if: FAILURE  
-
-resources:
-  repositories:
-    - repository: prod-ci-test/all-test-templates
-      name: all-template
-      ref: master  # 可选
-    - repository: prod-ci-test/all-test-templates
-      name: variablesRepo
-      ref: variables  # 可选
