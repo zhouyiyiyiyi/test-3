@@ -4,8 +4,6 @@ parameters:
 
 variables:
   EVENT: xxx
-  template:
-  - name: variables.yml@variablesRepo
  
 stages:
 - name: 预设替换变量
