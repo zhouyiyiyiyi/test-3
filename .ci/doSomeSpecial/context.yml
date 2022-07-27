@@ -37,7 +37,7 @@ steps:
       EOF
       cat mutil.txt
 
-      # echo  COS_APPID_SECRETID_SECRETKEY_REGION cosappId ${{ settings.ruotian_password_token_test.cosappId }}
-      # echo  COS_APPID_SECRETID_SECRETKEY_REGION secretId ${{ settings.ruotian_password_token_test.secretId }}
-      # echo  COS_APPID_SECRETID_SECRETKEY_REGION secretKey ${{ settings.ruotian_password_token_test.secretKey }}
-      # echo  COS_APPID_SECRETID_SECRETKEY_REGION region ${{ settings.ruotian_password_token_test.region }}
+      echo  COS_APPID_SECRETID_SECRETKEY_REGION cosappId ${{ settings.ruotian_password_token_test.cosappId }}
+      echo  COS_APPID_SECRETID_SECRETKEY_REGION secretId ${{ settings.ruotian_password_token_test.secretId }}
+      echo  COS_APPID_SECRETID_SECRETKEY_REGION secretKey ${{ settings.ruotian_password_token_test.secretKey }}
+      echo  COS_APPID_SECRETID_SECRETKEY_REGION region ${{ settings.ruotian_password_token_test.region }}

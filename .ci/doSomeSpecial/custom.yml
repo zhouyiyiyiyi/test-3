@@ -6,6 +6,6 @@ stages:
         steps:
           - run: |
               echo ::set-gate-value name=ruotiantest::1
-    check-out:
-      gates:
-        -  template: check/check-custom.yml
+    # check-out:
+    #   gates:
+    #     -  template: check/check-custom.yml
