@@ -18,9 +18,9 @@ on:
     paths:
       - triggers/trigger-all.txt
   
-concurrency:
-  group: ${{ ci.branch }}
-  cancel-in-progress: false
+# concurrency:
+#   group: ${{ ci.branch }}
+#   cancel-in-progress: false
   
 variables:
   WINDOW_TRIGGER: false
@@ -107,30 +107,3 @@ notices:
   receivers:
     - ${{ ci.actor }}
   if: SUCCESS
-- type: wework-message
-  content: ${{ variables.EVENT }}触发 STREAM-PROD环境-全部语法测试(无模板) 测试成功
-  receivers:
-    - ${{ ci.actor }} 
-  if: SUCCESS       
-- type: wework-chat
-  chat-id: 
-    - ${{ variables.CHAT_ID }} 
-  content: ${{ variables.EVENT }}触发 STREAM-PROD环境-全部语法测试(无模板) 测试成功 
-  if: SUCCESS
-- type: email
-  title: ${{ variables.EVENT }}触发 STREAM-PROD环境-全部语法测试(无模板) 测试失败
-  content: ${{ variables.EVENT }}触发 STREAM-PROD环境-全部语法测试(无模板) 测试失败
-  receivers:
-    - ${{ ci.actor }}
-  if: FAILURE
-- type: wework-message
-  content: ${{ variables.EVENT }}触发 STREAM-PROD环境-全部语法测试(无模板) 测试失败
-  receivers:
-    - ${{ ci.actor }} 
-  if: FAILURE       
-- type: wework-chat
-  chat-id: 
-    - ${{ variables.CHAT_ID }} 
-    # - ww230072302
-  content: ${{ variables.EVENT }}触发 STREAM-PROD环境-全部语法测试(无模板) 测试失败
-  if: FAILURE  

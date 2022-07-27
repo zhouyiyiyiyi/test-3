@@ -1,7 +1,7 @@
 version: v2.0
 
-concurrency:
-  group: ${{ ci.branch }} 
+# concurrency:
+#   group: ${{ ci.branch }} 
  
 stages:
 - jobs:
