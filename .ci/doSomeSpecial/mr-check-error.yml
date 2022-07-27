@@ -1,0 +1,15 @@
+version: v2.0
+
+on:
+  mr:
+    target-branches:
+      - main
+ 
+stages:
+- jobs:
+    all-job-0:
+      steps:
+      - run: |
+          exit 1
+  if-modify:
+    - "mr-check-error.md"
