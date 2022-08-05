@@ -7,11 +7,12 @@ parameters:
     default: 1.0
    
 gates:
-- name: 我是第二条红线
+
+- name: 我是第一条红线
   rule:     
-    - run.e >= ${{ parameters.pass_rate }}
-    - run.a < 1
-    - run.b == 1
+    - run.ff < 1
+    - run.step_run.a < 1
+    - run.step_run.b == 1
   notify-on-fail:
   - type: wework-message
     receivers: ${{ parameters.receivers }}
