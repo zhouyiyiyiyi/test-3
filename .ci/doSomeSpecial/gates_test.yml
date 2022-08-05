@@ -1,0 +1,44 @@
+version: v2.0
+ 
+name: step-test
+
+variables:
+    v_1: aaa
+    v_2: bbb
+    a: 0.8
+stages:
+- name: 生成红线指标1
+  jobs:
+    job_1:
+      steps:
+      - run: |
+          echo "hello 1"
+          echo ::set-gate-value name=ff::22
+          echo ::set-gate-value name=d::22
+          echo ::set-gate-value name=e::22.1
+          echo "::set-gate-value name=a::1"
+          echo "::set-gate-value name=b::2"
+        name: step_run
+      - run: |
+          echo "123"
+        name: step_run2
+- name: 准入
+  check-in:
+    gates:
+      - template: check/check_gates.yml
+    timeout-hours: 10
+  jobs:
+    job_1:
+      steps:
+      - checkout: self
+      
+- name: stage3
+  check-in:
+    gates:
+      - template: check/check_gates.yml
+    timeout-hours: 10
+  jobs:
+    job_1:
+      steps:
+      - run: |
+          echo "hello 1"
