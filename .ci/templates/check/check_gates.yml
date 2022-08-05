@@ -1,0 +1,51 @@
+parameters:
+  - name: receivers
+    type: array
+    default: [ "${{ ci.actor }}" ]
+  - name: pass_rate
+    type: number
+    default: 1.0
+   
+gates:
+- name: 我是第二条红线
+  rule:     
+    - ruotianQualityTest.caseCnt_total >= 200
+    - ruotianQualityTest.caseCnt_succ <= 1
+    # - ruotianQualityTest.pass_rate <= ${{ parameters.pass_rate }}
+    # - run.e >= ${{ parameters.pass_rate }}
+    # - run.caseCnt_total >= 27
+    # - run.a < 1
+    # - run.b == 1
+  notify-on-fail:
+  - type: wework-message
+    receivers: ${{ parameters.receivers }}
+  continue-on-fail:
+    gatekeepers: ${{ parameters.receivers }}
+- name: 我是第一条红线
+  rule:     
+    - CodeccCheckAtomDebug.flake8_all_defect < 10
+    - CodeccCheckAtomDebug.flake8_high_defect < 0
+    # - ruotianQualityTest.caseCnt_succ <= 1
+    # - ruotianQualityTest.pass_rate <= ${{ parameters.pass_rate }}
+    #  - run.ff < 1
+    # - run.pass_rate >= ${{ parameters.pass_rate }}
+    # - run.caseCnt_succ >= 27
+    # - run.step_run.a < 1
+    # - run.step_run.b == 1
+  notify-on-fail:
+  - type: wework-message
+    receivers: ${{ parameters.receivers }}
+  continue-on-fail:
+    gatekeepers: ${{ parameters.receivers }}
+# - name: 我是第一条红线
+#   rule:     
+#   - qualityTestt.abc*.caseCnt_total >= 1
+#   - qualityTestt.test123.caseCnt_succ <= 0
+#   - qualityTestt.test123.pass_rate <= 0
+#   - run.pass_rate >= 20.0
+#   - run.caseCnt_succ >= 20
+#   notify-on-fail:
+#   - type: wework-message
+#     receivers: ${{ parameters.receivers }}
+#   continue-on-fail:
+#     gatekeepers: ${{ parameters.receivers }}
