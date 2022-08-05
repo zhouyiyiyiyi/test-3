@@ -20,7 +20,6 @@ gates:
 - name: 我是第一条红线
   rule:     
     - run.ff < 1
-    - run.pass_rate >= ${{ parameters.pass_rate }}
     - run.step_run.a < 1
     - run.step_run.b == 1
   notify-on-fail:
