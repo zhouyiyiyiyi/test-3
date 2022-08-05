@@ -12,7 +12,7 @@ stages:
     job_1:
       steps:
       - run: |
-          echo "hello 1"
+          echo "hello 222"
           echo ::set-gate-value name=ff::22
           echo ::set-gate-value name=d::22
           echo ::set-gate-value name=e::22.1
