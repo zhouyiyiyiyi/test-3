@@ -9,13 +9,9 @@ parameters:
 gates:
 - name: 我是第二条红线
   rule:     
-    - ruotianQualityTest.caseCnt_total >= 200
-    - ruotianQualityTest.caseCnt_succ <= 1
-    # - ruotianQualityTest.pass_rate <= ${{ parameters.pass_rate }}
-    # - run.e >= ${{ parameters.pass_rate }}
-    # - run.caseCnt_total >= 27
-    # - run.a < 1
-    # - run.b == 1
+    - run.e >= ${{ parameters.pass_rate }}
+    - run.a < 1
+    - run.b == 1
   notify-on-fail:
   - type: wework-message
     receivers: ${{ parameters.receivers }}
@@ -23,15 +19,10 @@ gates:
     gatekeepers: ${{ parameters.receivers }}
 - name: 我是第一条红线
   rule:     
-    - CodeccCheckAtomDebug.flake8_all_defect < 10
-    - CodeccCheckAtomDebug.flake8_high_defect < 0
-    # - ruotianQualityTest.caseCnt_succ <= 1
-    # - ruotianQualityTest.pass_rate <= ${{ parameters.pass_rate }}
-    #  - run.ff < 1
-    # - run.pass_rate >= ${{ parameters.pass_rate }}
-    # - run.caseCnt_succ >= 27
-    # - run.step_run.a < 1
-    # - run.step_run.b == 1
+    - run.ff < 1
+    - run.pass_rate >= ${{ parameters.pass_rate }}
+    - run.step_run.a < 1
+    - run.step_run.b == 1
   notify-on-fail:
   - type: wework-message
     receivers: ${{ parameters.receivers }}
