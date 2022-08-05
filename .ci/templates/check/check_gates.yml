@@ -17,25 +17,3 @@ gates:
     receivers: ${{ parameters.receivers }}
   continue-on-fail:
     gatekeepers: ${{ parameters.receivers }}
-- name: 我是第一条红线
-  rule:     
-    - run.ff < 1
-    - run.step_run.a < 1
-    - run.step_run.b == 1
-  notify-on-fail:
-  - type: wework-message
-    receivers: ${{ parameters.receivers }}
-  continue-on-fail:
-    gatekeepers: ${{ parameters.receivers }}
-# - name: 我是第一条红线
-#   rule:     
-#   - qualityTestt.abc*.caseCnt_total >= 1
-#   - qualityTestt.test123.caseCnt_succ <= 0
-#   - qualityTestt.test123.pass_rate <= 0
-#   - run.pass_rate >= 20.0
-#   - run.caseCnt_succ >= 20
-#   notify-on-fail:
-#   - type: wework-message
-#     receivers: ${{ parameters.receivers }}
-#   continue-on-fail:
-#     gatekeepers: ${{ parameters.receivers }}
