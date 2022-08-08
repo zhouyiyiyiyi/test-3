@@ -1,0 +1,13 @@
+version: v2.0
+
+steps:
+  - checkout: self
+  - uses: uploadArtifact@1.*
+    name: uploadArtifact
+    with:
+      # 待归档的文件, 必选
+      filePath: README.md
+      # 归档至自定义版本仓库, 默认: false
+      isCustomize: false
+      # no label, 默认: upload/, dang [isCustomize] = [true] timetoSelect
+      destPath: upload/
