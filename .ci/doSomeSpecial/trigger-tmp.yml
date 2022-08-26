@@ -4,7 +4,8 @@ steps:
 - checkout: self
   name: 拉取 all-test 代码
   with:
-    strategy: FRESH_CHECKOUT  
+    strategy: FRESH_CHECKOUT
+    enableGitLfs: false
 - name: "删除流水线测试: 新增文件"
   run: |
     set -x
