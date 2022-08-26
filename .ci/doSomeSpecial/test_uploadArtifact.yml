@@ -2,6 +2,8 @@ version: v2.0
 name: "test_uploadArtifact"
 steps:
   - checkout: self
+    with:
+      enableGitLfs: false
   - uses: uploadArtifact@1.*
     name: uploadArtifact
     with:
