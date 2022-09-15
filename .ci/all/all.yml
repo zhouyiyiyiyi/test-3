@@ -50,7 +50,7 @@ stages:
       depend-on: [all-job-1]
       steps:
       - run: |
-            echo " all-job-2 [continue-on-error, dependon] 执行完成"
+            echo " all-job-2 [continue-on-error, dependon] 执行完成" 
             exit 1
       continue-on-error: true
 - name: Window-私有
